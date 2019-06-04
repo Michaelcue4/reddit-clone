@@ -34,8 +34,8 @@ class Posts extends Component {
         e.preventDefault()
         axios
             .post('api/posts', {
-                name: this.state.newPost.name,
-                description: this.state.newPost.description
+                title: this.state.newPost.title,
+                info: this.state.newPost.info
             })
             .then(res => {
                 const postsList = [...this.state.posts]
