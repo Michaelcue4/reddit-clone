@@ -19,7 +19,7 @@ p{
 }
 
 .navBar {
-  font-family: 'sporty';
+  font-family: 'reddit';
   font-weight: bold;
 display: flex;
 justify-content: space-around;
@@ -31,22 +31,10 @@ height: 10vh;
 width: 100vw;
 }
 
-.homePage{
-color: whitesmoke;
+.postPage{
 display: flex;
 flex-direction: column;
-background: url("Images/appHome.jpg");
-height: 100vh;
-width: 100vw;
-align-items: center;
-background-repeat: no-repeat;
-background-size: 100% 100%;
-}
-
-.cityPage{
-display: flex;
-flex-direction: column;
-background: url("Images/cityPhoto.jpeg");
+background: url("") red;
 height: 100vh;
 width: 100vw;
 align-items: center;
@@ -56,15 +44,15 @@ font-family: 'Courier New', Courier, monospace;
 font-weight: bold;
 color: teal;
 }
-.cityImg{
-background: url("Images/soccer3Wallpaper.jpg");
+.postImg{
+background: url("") black;
 background-size: 100% 100%;
 margin-top: -40px;
 height: 50vh;
 width: 60vw;
 }
-.cityList{
-color: teal;
+.postList{
+color: red;
 font-size: 20px;
 background: black;
 border: solid whitesmoke 5px;
@@ -73,7 +61,7 @@ border-radius: 12px;
 opacity: .7;
 width: 60vw;
 }
-.parkPage{
+.commentPage{
 display: flex;
 flex-direction: column;
 background: url("Images/track2Wallpaper.jpg");
@@ -86,15 +74,15 @@ font-family: 'Courier New', Courier, monospace;
 font-weight: bold;
 color: teal;
 }
-.parkImg{
+.commentImg{
   background: url("Images/bbcourt2Wallpaper.jpeg");
 background-size: 100% 100%;
 margin-top: -40px;
 height: 50vh;
 width: 60vw;
 }
-.parkList{
-  color: teal;
+.commentList{
+  color: red;
   font-size: 20px;
   background: black;
   border: solid whitesmoke 5px;
@@ -103,8 +91,8 @@ width: 60vw;
   opacity: .7;
   width: 60vw;
 }
-.singleCity{
-  background: url("Images/bbcourtWallpaper.jpg");
+.singleCpost{
+  background: url("") gray;
   background-size: 100% 100%;
   height: 100vh;
   width: 100vw;

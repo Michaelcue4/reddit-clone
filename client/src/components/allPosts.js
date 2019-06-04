@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+// import SinglePost from './singlePost';
 
 class Posts extends Component {
     state = {
@@ -13,7 +14,8 @@ class Posts extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('api/posts').then(res => {
+        axios.get('/posts').then(res => {
+            console.log(res.data)
             this.setState({ posts: res.data })
         })
     }

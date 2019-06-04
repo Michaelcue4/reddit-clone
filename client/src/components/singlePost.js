@@ -11,7 +11,7 @@ class SinglePost extends Component {
         },
         resInfo: {
             post: {
-                _id: '',
+                id: '',
                 title: '',
                 info: ''
             },
@@ -111,7 +111,7 @@ getpost=()=>{
                         </div>
                 }
                        <div>
-                        Commennts:
+                        <p>Commennts:</p>
                         {/* <AllComments data= { this.state.resInfo.comments}/> */}
                          {/* {this.state.resInfo.comments} */}
                         </div>
