@@ -17,7 +17,7 @@ class SinglePost extends Component {
             comments: []
         },
         redirectToHome: false,
-        isEditFormDisplayed: false
+        isEditFormDisplayed: false,
     }
 getpost=()=>{
     axios.get(`/api/posts/${this.props.match.params.id}`).then(res => {
@@ -63,6 +63,7 @@ getpost=()=>{
     }
 
     render() {
+
         if (this.state.redirectToHome) {
             return (<Redirect to="/posts" />)
         }
@@ -72,6 +73,7 @@ getpost=()=>{
                 <Link to="/posts">Back to Posts</Link>
                 <h1>{this.state.resInfo.post.title}</h1>
                 <p>{this.state.resInfo.post.info}</p>
+                
                 <button onClick={this.toggleEditForm}>Edit</button>
                 {
                     this.state.isEditFormDisplayed
