@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from .serializers import PostSerializer, CommentSerializer
+from .models import Post, Comment
 
-# Create your views here.
+class PostList(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+class CommentList(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
