@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+// import SinglePost from './singlePost';
 
 class Posts extends Component {
     state = {
-        Posts: [],
+        posts: [],
         newPost: {
             title: '',
             info: ''
@@ -13,7 +14,8 @@ class Posts extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('api/posts').then(res => {
+        axios.get('/posts').then(res => {
+            console.log(res.data)
             this.setState({ posts: res.data })
         })
     }
@@ -34,8 +36,8 @@ class Posts extends Component {
         e.preventDefault()
         axios
             .post('api/posts', {
-                name: this.state.newPost.name,
-                description: this.state.newPost.description
+                title: this.state.newPost.title,
+                info: this.state.newPost.info
             })
             .then(res => {
                 const postsList = [...this.state.posts]
@@ -71,6 +73,7 @@ class Posts extends Component {
                                     {post.name}
                                 </Link>
                             </div>
+                            // < AllComments key={i} />
                         )
                     })
                     }
