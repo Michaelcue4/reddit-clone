@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+// , Link
 import axios from "axios";
 
 class SinglePost extends Component {
@@ -70,10 +71,10 @@ getpost=()=>{
 
         return (
             <div className="singlePost">
-                <Link to="/posts">Back to Posts</Link>
+                {/* <Link to="/posts">Back to Posts</Link> */}
                 <h1>{this.state.resInfo.post.title}</h1>
                 <p>{this.state.resInfo.post.info}</p>
-                
+
                 <button onClick={this.toggleEditForm}>Edit</button>
                 {
                     this.state.isEditFormDisplayed
@@ -109,6 +110,11 @@ getpost=()=>{
                             <button onClick={this.deletePost}>Delete</button>
                         </div>
                 }
+                       <div>
+                        Commennts:
+                        {/* <AllComments data= { this.state.resInfo.comments}/> */}
+                         {/* {this.state.resInfo.comments} */}
+                        </div>
             </div>
         );
     }

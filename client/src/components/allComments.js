@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Comments extends Component {
     state = {
-        Comments: [],
+        comments: [],
         newComment: {
             description: ''
         },

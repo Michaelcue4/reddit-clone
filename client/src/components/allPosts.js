@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Posts extends Component {
     state = {
-        Posts: [],
+        posts: [],
         newPost: {
             title: '',
             info: ''
@@ -71,6 +71,7 @@ class Posts extends Component {
                                     {post.name}
                                 </Link>
                             </div>
+                            // < AllComments key={i} />
                         )
                     })
                     }

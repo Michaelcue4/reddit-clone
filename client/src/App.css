@@ -1,22 +1,116 @@
-.App {
+@font-face {
+  font-family: 'reddit';
+  src: url('./components/Fonts/');
+}
+
+h1, h3{
+  font-family: 'sporty';
+  font-size: 50px;
+}
+
+p{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+*{
+  text-decoration: none;
+  color: inherit;
+}
+
+.navBar {
+  font-family: 'sporty';
+  font-weight: bold;
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: whitesmoke;
+color: teal;
+font-size: 30px;
+height: 10vh;
+width: 100vw;
+}
+
+.homePage{
+color: whitesmoke;
+display: flex;
+flex-direction: column;
+background: url("Images/appHome.jpg");
+height: 100vh;
+width: 100vw;
+align-items: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+.cityPage{
+display: flex;
+flex-direction: column;
+background: url("Images/cityPhoto.jpeg");
+height: 100vh;
+width: 100vw;
+align-items: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+color: teal;
+}
+.cityImg{
+background: url("Images/soccer3Wallpaper.jpg");
+background-size: 100% 100%;
+margin-top: -40px;
+height: 50vh;
+width: 60vw;
+}
+.cityList{
+color: teal;
+font-size: 20px;
+background: black;
+border: solid whitesmoke 5px;
+text-align: center;
+border-radius: 12px;
+opacity: .7;
+width: 60vw;
+}
+.parkPage{
+display: flex;
+flex-direction: column;
+background: url("Images/track2Wallpaper.jpg");
+height: 100vh;
+width: 100vw;
+align-items: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+color: teal;
+}
+.parkImg{
+  background: url("Images/bbcourt2Wallpaper.jpeg");
+background-size: 100% 100%;
+margin-top: -40px;
+height: 50vh;
+width: 60vw;
+}
+.parkList{
+  color: teal;
+  font-size: 20px;
+  background: black;
+  border: solid whitesmoke 5px;
   text-align: center;
+  border-radius: 12px;
+  opacity: .7;
+  width: 60vw;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.singleCity{
+  background: url("Images/bbcourtWallpaper.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-repeat: no-repeat;
+  color: whitesmoke;
 }
 
 .App-link {
