@@ -1,0 +1,3 @@
+CREATE DATABASE reddit;
+CREATE USER reddituser WITH PASSWORD 'reddit';
+GRANT ALL PRIVILEGES ON DATABASE reddit TO reddituser;
