@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-// import SinglePost from './singlePost';
+import { Link, Router, Route } from 'react-router-dom'
+import SinglePost from './singlePost';
 
 class Posts extends Component {
     state = {
@@ -10,12 +10,13 @@ class Posts extends Component {
             title: '',
             info: ''
         },
-        isPostFormDisplayed: false
+        isPostFormDisplayed: false,
+        showSingleForm: false,
+        postId: 0
     }
 
     componentDidMount = () => {
-        axios.get('/posts').then(res => {
-            console.log(res.data)
+        axios.get('api/v1/posts/').then(res => {
             this.setState({ posts: res.data })
         })
     }
@@ -32,10 +33,14 @@ class Posts extends Component {
         this.setState({ newPost: cloneNewPost })
     }
 
+    toggleSinglePost = e => {
+        this.setState({showSingleForm: !this.state.showSingleForm, postId: e.target.id})
+    }
+
     createPost = (e) => {
         e.preventDefault()
         axios
-            .post('api/posts', {
+            .post('api/v1/posts/', {
                 title: this.state.newPost.title,
                 info: this.state.newPost.info
             })
@@ -56,8 +61,7 @@ class Posts extends Component {
 
     render() {
         return (
-
-
+            !this.state.showSingleForm ?
             <div className="postPage">
                 <h3>Posts</h3>
                 <div className="postImg"></div>
@@ -66,12 +70,10 @@ class Posts extends Component {
 
                     {this.state.posts.map(post => {
                         return (
-                            <div key={post._id}>
-                                <Link
-                                    to={`/posts/${post._id}`}
-                                >
-                                    {post.name}
-                                </Link>
+                            <div key={post.id}>
+                                <button id={post.id} onClick={this.toggleSinglePost}>
+                                    {post.title}
+                                </button>
                             </div>
                             // < AllComments key={i} />
                         )
@@ -107,8 +109,7 @@ class Posts extends Component {
                     }
                 </div>
 
-            </div>
-
+            </div>: <SinglePost postId={this.state.postId}></SinglePost>
         )
     }
 }

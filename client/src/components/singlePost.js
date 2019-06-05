@@ -10,19 +10,16 @@ class SinglePost extends Component {
             info: ''
         },
         resInfo: {
-            post: {
-                id: '',
-                title: '',
-                info: ''
-            },
-            comments: []
+            id: '',
+            created_at: '',
+            title: '',
+            content: ''
         },
         redirectToHome: false,
         isEditFormDisplayed: false,
     }
 getpost=()=>{
-    axios.get(`/api/posts/${this.props.match.params.id}`).then(res => {
-        console.log(res.data)
+    axios.get(`/api/v1/posts/${this.props.postId}`).then(res => {
         this.setState({ resInfo: res.data })
     })
 }
@@ -33,7 +30,7 @@ getpost=()=>{
     }
 
     deletePost = () => {
-        axios.delete(`/api/posts/${this.props.match.params.id}`).then(res => {
+        axios.delete(`/api/v1/posts/${this.props.match.params.id}`).then(res => {
             this.setState({ redirectToHome: true })
         })
     }
@@ -53,7 +50,7 @@ getpost=()=>{
     updateCity = (e) => {
         e.preventDefault()
         axios
-            .put(`/api/posts/${this.props.match.params.id}`, {
+            .put(`/api/v1/posts/${this.props.match.params.id}`, {
                 name: this.state.post.title,
                 description: this.state.post.info
             })
@@ -64,7 +61,6 @@ getpost=()=>{
     }
 
     render() {
-
         if (this.state.redirectToHome) {
             return (<Redirect to="/posts" />)
         }
@@ -72,8 +68,9 @@ getpost=()=>{
         return (
             <div className="singlePost">
                 {/* <Link to="/posts">Back to Posts</Link> */}
-                <h1>{this.state.resInfo.post.title}</h1>
-                <p>{this.state.resInfo.post.info}</p>
+                <h1>{this.state.resInfo.title}</h1> 
+                <p>{this.state.resInfo.created_at}</p> 
+                <h1>{this.state.resInfo.content}</h1> 
 
                 <button onClick={this.toggleEditForm}>Edit</button>
                 {
@@ -101,12 +98,6 @@ getpost=()=>{
                             <button>Update</button>
                         </form>
                         : <div>
-                            <div>
-                                Name: {this.state.post.title}
-                            </div>
-                            <div>
-                                Info: {this.state.post.info}
-                            </div>
                             <button onClick={this.deletePost}>Delete</button>
                         </div>
                 }
