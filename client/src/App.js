@@ -7,11 +7,7 @@ import AllPost from './components/allPosts';
 function App() {
   return (
     <div >
-      app!
      <AllPost/>
-     {/* <SinglePost/> */}
-
-
     </div>
   );
 }
